@@ -15,10 +15,8 @@ import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageView;
-import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
@@ -40,7 +38,7 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
+		requestWindowFeature(Window.FEATURE_NO_TITLE);//取消窗口标题
 		setContentView(R.layout.activity_main);
 		inflater = LayoutInflater.from(this);
 		fragmentManager = getSupportFragmentManager();
@@ -61,10 +59,10 @@ public class MainActivity extends FragmentActivity {
 	}
 	
 	/**
-	 * 初始化各个组件
+	 * 初始化组件
 	 */
 	public void initViews(){
-		//实例化TabHost对象，得到TabHost
+		//实例化FragmentTabHost
 		mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);
 		mTabHost.setup(this, fragmentManager, R.id.main_content);
 		int count = fragments.length;
@@ -74,13 +72,13 @@ public class MainActivity extends FragmentActivity {
 					getTabItemView(i));
 			mTabHost.addTab(mTabSpec,fragments[i],null);
 			
-			//设置Tab按钮的背景
+			//设置tabhost按钮选中北京
 			mTabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.tabbar_btn_bg);
 		}
 	}
 	
 	/**
-	 * 给Tab按钮设置图标和文字
+	 * 给Tab设置图片和文字
 	 * @param index item id
 	 */
 	private View getTabItemView(int index){
