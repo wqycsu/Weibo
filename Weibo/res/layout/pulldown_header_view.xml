@@ -1,57 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
-    <LinearLayout 
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_centerInParent="true"
-        android:orientation="horizontal">
-        
-        <RelativeLayout 
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_weight="1">
-            
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+    <RelativeLayout
+        android:id="@+id/head_contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+	    <FrameLayout 
+	        android:id="@+id/arrow_progressbar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content">
+	        <!-- 箭头 -->
+
             <ImageView
-	            android:id="@+id/header_arrow"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_centerInParent="true"
-	            android:contentDescription="@string/pulldown_arrow"
-	            android:src="@drawable/pulldown_arrow"/>
-            <ProgressBar 
-                android:id="@+id/header_progress_bar"
+                android:id="@+id/header_arrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@drawable/pulldown_arrow" />
+
+            <!-- 进度条 -->
+
+            <ProgressBar
+                android:id="@+id/header_progress_bar"
                 android:indeterminateDrawable="@drawable/refresh_progressbar"
-                android:visibility="gone"/>
-        </RelativeLayout>
-        
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+	    </FrameLayout>
+	     <!-- 提示、最近更新 -->
+
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:orientation="vertical"
-            android:layout_weight="4">
-            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/arrow_progressbar"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <!-- 提示 -->
+
             <TextView
                 android:id="@+id/header_description"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|bottom"
-                android:text="@string/pulldown_refresh"/>
-            
-            <TextView 
-                android:id="@+id/header_update_at"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="@string/pulldown_updated_at"
-                android:gravity="center_horizontal|top"/>
-        </LinearLayout>
-    </LinearLayout>
-    
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下拉刷新"
+                android:textSize="15sp" />
 
-</RelativeLayout>
+            <!-- 最近更新 -->
+
+            <TextView
+                android:id="@+id/header_update_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上次更新"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

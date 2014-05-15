@@ -3,7 +3,6 @@
 
     <preview
         name="Config1"
-        activity="com.wqy.weibo.MainActivity"
         config="layout-ldltr-sw320dp-w320dp-h533dp-normal-long-port-notnight-hdpi-finger-keyssoft-nokeys-navexposed-trackball-800x480-v17"
         device="3.7&quot; WVGA (Nexus One)"
         devicestate="Portrait"

@@ -4,50 +4,6 @@
     android:layout_height="match_parent"
   	android:orientation="vertical"
     tools:context=".MainActivity" >
-	<RelativeLayout 
-	    android:id="@+id/home_header"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:background="@drawable/navigationbar_button_background">
-	    <ImageView 
-	        android:id="@+id/home_write_weibo"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_centerVertical="true"
-	        android:layout_alignParentLeft="true"
-	        android:layout_margin="10dp"
-	        android:src="@drawable/navigation_button_write_weibo"/>
-	    <RelativeLayout
-	        android:id="@+id/header_userinfo"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_centerInParent="true"
-	        android:background="@drawable/navigation_userinfo"
-	        >
-	        <TextView 
-	            android:id="@+id/user_nickname"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_centerVertical="true"
-	            android:layout_marginRight="5dp"
-	            android:text="wqy"/>
-	        <ImageView
-	            android:id="@+id/navigationbar_arrow"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/user_nickname"
-	            android:layout_centerVertical="true"
-	            android:src="@drawable/navigationbar_arrow_down"/>
-	    </RelativeLayout>
-	    <ImageView 
-	        android:id="@+id/home_refresh_weibo"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_centerVertical="true"
-	        android:layout_alignParentRight="true"
-	        android:layout_margin="10dp"
-	        android:src="@drawable/navigation_button_refresh"/>"
-	</RelativeLayout>
 	
     <FrameLayout 
         android:id="@+id/main_content"

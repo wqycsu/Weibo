@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/retweeted_weiboinfo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout 
+        android:id="@+id/retweeted_weibo_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+       	
+        <com.wqy.weibo.view.TextViewWithLink 
+            android:id="@+id/retweeted_weibo_content_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="#0082cb"
+            android:autoLink="web|email|phone"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:layout_centerHorizontal="true"
+            android:text="\@新浪 这是第一条来自新浪的微博">
+        </com.wqy.weibo.view.TextViewWithLink>
+        
+        <com.wqy.weibo.view.WeiboImagesGridView 
+		    android:id="@+id/retweeted_weibo_contentimgs_gridview"
+		    android:layout_below="@id/retweeted_weibo_content_text"
+		    android:layout_marginTop="10dp"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true"
+	        android:gravity="center"
+	        android:horizontalSpacing="5dp"
+	        android:numColumns="3"
+	        
+	        android:verticalSpacing="5dp">
+            
+        </com.wqy.weibo.view.WeiboImagesGridView>
+   
+    </RelativeLayout>
+
+</RelativeLayout>
