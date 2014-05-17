@@ -1,0 +1,13 @@
+build/*
+.DS_Store
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+Weibo/bin/
+Weibo/gen/
+WeiboSDK/bin/
