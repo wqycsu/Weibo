@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
+    android:background="@drawable/weibo_info_item_bg"
+    android:descendantFocusability="blocksDescendants" >
+    <RelativeLayout 
+        android:id="@+id/weibo_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:padding="5dp">
+        <ImageView
+            android:id="@+id/head_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/head_icon_default"/>
+        <ImageView
+            android:id="@+id/add_v"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_toRightOf="@id/head_icon"
+            android:layout_below="@id/head_icon"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="-12dp"
+            android:src="@drawable/v"/>
+        <RelativeLayout 
+            android:id="@+id/name_and_vip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/head_icon">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="bottom"
+                android:text="逍遥wqy"
+                android:textColor="#F0FC8C00"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/vip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/name"
+                android:src="@drawable/common_icon_membership_expired" />
+
+        </RelativeLayout>
+        
+        <TextView 
+            android:id="@+id/weibo_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/head_icon"
+            android:layout_below="@id/name_and_vip"
+            android:textColor="#FFA500"
+            android:layout_alignLeft="@id/name_and_vip"
+            android:layout_alignBottom="@id/add_v"
+            android:gravity="bottom"
+            android:text="7分钟前"/>
+        <TextView 
+            android:id="@+id/come_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/weibo_time"
+            android:layout_below="@id/name_and_vip"
+            android:layout_alignBottom="@id/weibo_time"
+            android:layout_marginLeft="5dp"
+            android:text="来自:"
+            android:gravity="bottom"/>
+        <TextView 
+            android:id="@+id/from"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/come_from"
+            android:layout_below="@id/name_and_vip"
+            android:layout_alignBottom="@id/come_from"
+            android:gravity="bottom"
+            android:text="微博  weibo.com"/>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/weibo_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/weibo_header"
+        android:padding="5dp"
+        android:layout_marginTop="10dp">
+       	
+        <com.wqy.weibo.view.TextViewWithLink 
+            android:id="@+id/weibo_content_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="#0082cb"
+            android:autoLink="web|email"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="这是第一条来自新浪的微博">
+        </com.wqy.weibo.view.TextViewWithLink>
+        
+        <com.wqy.weibo.view.WeiboImagesGridView 
+		    android:id="@+id/weibo_contentimgs_gridview"
+		    android:layout_below="@id/weibo_content_text"
+		    android:layout_marginTop="10dp"
+		    android:layout_width="wrap_content"
+		    android:layout_height="fill_parent"
+		    android:layout_alignParentLeft="true"
+	        android:gravity="center"
+	        android:horizontalSpacing="5dp"
+	        android:numColumns="3"
+	        android:verticalSpacing="5dp">
+            
+        </com.wqy.weibo.view.WeiboImagesGridView>
+   
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/weibo_retweet_content"
+        android:layout_below="@id/weibo_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:focusable="false"
+        android:background="@drawable/weibo_retweet_content_bg">
+       	<com.wqy.weibo.view.TextViewWithLink 
+            android:id="@+id/retweeted_weibo_content_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="#0082cb"
+            android:autoLink="web|email"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="\@新浪 这是第一条来自新浪的微博">
+        </com.wqy.weibo.view.TextViewWithLink>
+        
+        <com.wqy.weibo.view.WeiboImagesGridView 
+		    android:id="@+id/retweeted_weibo_contentimgs_gridview"
+		    android:layout_below="@id/retweeted_weibo_content_text"
+		    android:layout_marginTop="10dp"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true"
+	        android:gravity="center"
+	        android:horizontalSpacing="5dp"
+	        android:numColumns="3" 
+	        android:verticalSpacing="5dp">
+        </com.wqy.weibo.view.WeiboImagesGridView>
+    </RelativeLayout>
+    
+    <View 
+        android:id="@+id/line"
+        android:layout_below="@id/weibo_retweet_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="3dp"
+        android:layout_height="1dp"
+        android:background="#e6e6e6"/>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp" >
+
+        <TableRow
+            android:id="@+id/transWeibo"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:background="@drawable/weibo_bottom_background_style"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/transButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/timeline_icon_redirect" />
+
+            <TextView
+                android:id="@+id/transCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_gravity="center_vertical"
+                android:text="47" />
+        </TableRow>
+
+       <TableRow
+            android:id="@+id/showComment"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:background="@drawable/weibo_bottom_background_style"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/commentButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/timeline_icon_comment" />
+
+            <TextView
+                android:id="@+id/commentCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="27" />
+           
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/addLike"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:background="@drawable/weibo_bottom_background_style"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/likeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/timeline_icon_unlike" />
+
+            <TextView
+                android:id="@+id/likeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="17" />
+        </TableRow>
+    </LinearLayout>
+</RelativeLayout>
